@@ -6,12 +6,10 @@ import dotenv from "dotenv";
 dotenv.config(); // Carga variables de entorno
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
   res.send("Instagram Agent está corriendo correctamente 🚀");
-});
-
-app.listen(port, () => {
-  console.log(`🚀 Servidor activo en http://localhost:${port}`);
 });
 
 app.use(bodyParser.json());
@@ -70,6 +68,6 @@ async function runPlaywright(accion, cantidad, criterio) {
   }
 }
 
-app.listen(3000, () => {
-  console.log("🚀 Servidor activo en http://localhost:3000");
+app.listen(port, () => {
+  console.log(`🚀 Servidor activo en http://localhost:${port}`);
 });
