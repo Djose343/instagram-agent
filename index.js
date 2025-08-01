@@ -6,6 +6,14 @@ import dotenv from "dotenv";
 dotenv.config(); // Carga variables de entorno
 
 const app = express();
+app.get("/", (req, res) => {
+  res.send("Instagram Agent está corriendo correctamente 🚀");
+});
+
+app.listen(port, () => {
+  console.log(`🚀 Servidor activo en http://localhost:${port}`);
+});
+
 app.use(bodyParser.json());
 
 app.post("/accion", async (req, res) => {
